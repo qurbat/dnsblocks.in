@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poisoned Wells - Examining the scale of DNS censorship in India</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dnsblocks.in/">
+    <meta property="og:title" content="Poisoned Wells - Examining the scale of DNS censorship in India">
+    <meta property="og:description" content="A survey of the entire visible domain name space across 6 Indian ISPs, producing the largest known list of blocked domains (43,083) and revealing previously undocumented instances of overblocking.">
+    <meta property="og:image" content="https://dnsblocks.in/assets/android-chrome-512x512.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://dnsblocks.in/">
+    <meta name="twitter:title" content="Poisoned Wells - Examining the scale of DNS censorship in India">
+    <meta name="twitter:description" content="A survey of the entire visible domain name space across 6 Indian ISPs, producing the largest known list of blocked domains (43,083) and revealing previously undocumented instances of overblocking.">
+    <meta name="twitter:image" content="https://dnsblocks.in/assets/android-chrome-512x512.png">
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    
+    <section class="hero" aria-label="Project introduction">
+        <div class="container">
+            <div class="hero-content-box">
+                <div class="hero-header">
+
+
+                </div>
+
+                <h1>
+                    Poisoned Wells
+                    <span class="title-main">Examining the scale of DNS censorship in India</span>
+                </h1>
+
+                <p class="hero-description">
+                    A survey of the entire visible domain name space across 6 Indian ISPs, producing the largest known list of blocked domains (43,083) and revealing previously undocumented instances of overblocking.
+                </p>
+
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Last Updated: March 2026</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        <span>Creative Commons BY-NC-SA 4.0</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 15px;">
+                    <a href="#data" class="btn-primary" aria-label="Download research report">
+                        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download report
+                    </a>
+                    <a href="#explorer" class="btn-secondary" aria-label="View dataset explorer">
+                        Explore
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <main id="main-content">
+        
+        <section class="methodology" aria-labelledby="methodology-heading">
+        <div class="container">
+            <h2 id="methodology-heading">Methodology overview</h2>
+            <p class="methodology-intro">
+                This study employed DNS measurement collection to test 294 million registered domains across 6 major and regional Indian ISPs. Unlike previous studies which relied on curated lists of potentially blocked websites (PBWs), this study tested the entire visible domain space, identifying blocking through signature detection.
+            </p>
+            
+            <div class="methodology-item">
+                <h3>Direct and remote measurements</h3>
+                <p>
+                    Deployed direct ISP connections for Reliance Jio, Bharti Airtel, and Atria Convergence Technologies (ACT), while identifying infrastructural resolvers for Mahanagar Telephone Nigam Ltd. (MTNL), Connect Broadband, and You Broadband. Queried 294 million domains per ISP at a reasonable queries per second (QPS) rate to avoid service degradation for legitimate users.
+                </p>
+            </div>
+            
+            <div class="methodology-item">
+                <h3>Blocking detection and validation</h3>
+                <p>
+                    Identified forged IPs making up the unique blocking signatures for each ISP. Discerned DNS injection by ACT through queries to non-resolver IPs. Validated suspected blocks by collecting control measurements through third-party DNS providers.
+                </p>
+            </div>
+            
+            <div class="methodology-item">
+                <h3>Classification and analysis</h3>
+                <p>
+                    Categorized the resulting blocklist with an expanded version of Citizen Lab's test list taxonomy using a mixed approach aided by open source, high-confidence, category-specific lists (GMB, PORN, MAL), manual classification, and machine learning. Enriched with popularity rankings from the Tranco List. Identified broad blocking patterns (both intended and those caused by misconfigurations) through analysis.
+                </p>
+            </div>
+        </div>
+    </section>
+
+        
+        <section id="explorer" class="explorer" aria-labelledby="explorer-heading">
+            <div class="container">
+                <h2 id="explorer-heading">Interactive dataset explorer</h2>
+            <p class="explorer-intro">
+                Explore 43,083 blocked domains and their censorship status across six ISPs. Filter by ISP, category, TLD, or search specific domains. Includes Tranco popularity rankings.
+            </p>
+
+            <div id="loadingState" class="loading-state">
+                <div class="spinner"></div>
+                <p style="color: #d1d5db; font-size: 1.1rem;">Loading</p>
+            </div>
+
+            <div id="explorerContent" style="display: none;">
+                <div class="explorer-layout">
+                    
+                    <div class="filter-panel">
+                        <div class="filter-section">
+                            <div id="resultCounter" class="result-counter">43,083 domains</div>
+                        </div>
+                        <div class="filter-section">
+                            <label class="filter-label" for="searchInput">Search domains</label>
+                            <div class="search-box">
+                                <input type="text" id="searchInput" class="search-input" placeholder="Search by domain name..." aria-label="Search domains by name">
+                                <button class="search-clear" id="searchClear" aria-label="Clear search">×</button>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <label class="filter-label">Filter by ISP</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="isp-ACT" value="ACT">
+                                    <label for="isp-ACT">ACT</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="isp-AIRTEL" value="AIRTEL">
+                                    <label for="isp-AIRTEL">AIRTEL</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="isp-CONNECT" value="CONNECT">
+                                    <label for="isp-CONNECT">CONNECT</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="isp-JIO" value="JIO">
+                                    <label for="isp-JIO">JIO</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="isp-MTNL" value="MTNL">
+                                    <label for="isp-MTNL">MTNL</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="isp-YOU" value="YOU">
+                                    <label for="isp-YOU">YOU</label>
+                                </div>
+                            </div>
+                            <div style="margin-top: 12px;">
+                                <button id="ispToggle" class="toggle-switch" type="button" aria-pressed="false" aria-label="Toggle between blocked by any, all, or only selected ISPs">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 6v6l4 2"></path>
+                                    </svg>
+                                    <span id="ispToggleText">Blocked by ANY</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <div class="filter-row">
+                                <div>
+                                    <label class="filter-label" for="categoryFilter">Category</label>
+                                    <select id="categoryFilter" class="filter-input" aria-label="Filter by content category">
+                                        <option value="">All categories</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="filter-label" for="tldFilter">TLD</label>
+                                    <select id="tldFilter" class="filter-input" aria-label="Filter by top-level domain">
+                                        <option value="">All TLDs</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <label class="filter-label" for="trancoSort">Tranco rank</label>
+                            <select id="trancoSort" class="filter-input" aria-label="Sort by Tranco popularity rank">
+                                <option value="">No sorting</option>
+                                <option value="asc">Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-section">
+                            <button id="resetFilters" class="reset-btn">Reset all filters</button>
+                        </div>
+                    </div>
+
+                    
+                    <div class="table-container">
+                        <div class="table-wrapper" role="region" aria-label="Scrollable data table" tabindex="0">
+                            <table class="data-table">
+                                <caption class="sr-only">Blocked domains across 6 Indian ISPs with blocking status, category, and popularity rank</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Domain</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col" style="text-align: right;">Tranco rank</th>
+                                        <th scope="col">ACT</th>
+                                        <th scope="col">AIRTEL</th>
+                                        <th scope="col">CONNECT</th>
+                                        <th scope="col">JIO</th>
+                                        <th scope="col">MTNL</th>
+                                        <th scope="col">YOU</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dataTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        
+        <section id="data" class="data" aria-labelledby="data-heading">
+            <div class="container">
+                <div class="data-content-box">
+                    <h2 id="data-heading">Data and documentation</h2>
+                    <p class="data-intro">
+                        The compiled blocklist, raw DNS measurements, and project report are provided under the Creative Commons BY-NC-SA 4.0 license. The raw measurements consist of DNS queries in <span class="monospace-highlight">jsonl</span> format with 294 million domains queried per ISP, totaling 1.76 billion queries.
+                    </p>
+
+                    <div class="data-grid-layout">
+                    
+                    <div class="data-report-column">
+                        <div class="report-card">
+                            <div class="report-card-layout">
+                                <img src="assets/report_front_page.png" alt="Poisoned Wells Project Report Cover" class="report-card-cover">
+                                <div class="report-card-content">
+                                    <h3 class="report-card-title">Read the project report</h3>
+                                    <p class="report-card-description">
+                                        Download the project report detailing the methodology, findings, and analysis of DNS censorship across Indian ISPs. A technical paper will be available in preprint soon.
+                                    </p>
+                                    <a href="assets/report.pdf" class="btn-primary" download aria-label="Download project report PDF">
+                                        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="7 10 12 15 17 10"></polyline>
+                                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                                        </svg>
+                                        Download report
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="data-downloads-column">
+                        
+                <div class="download-card">
+                    <div class="download-card-content">
+                        <div class="download-card-icon" aria-hidden="true" role="presentation">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="download-card-info">
+                            <h3 class="download-card-title">Compiled blocklist</h3>
+                            <p class="download-card-meta">CSV Dataset • 1.7 MB</p>
+                        </div>
+                        <a href="data/compiled_blocklist.csv" class="download-card-btn" download aria-label="Download compiled blocklist CSV">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="download-card">
+                    <div class="download-card-content">
+                        <div class="download-card-icon" aria-hidden="true" role="presentation">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="download-card-info">
+                            <h3 class="download-card-title">DNS measurements</h3>
+                            <p class="download-card-meta">6 files • ~68 GB compressed • ~760 GB raw</p>
+                        </div>
+                        <a href="https://github.com/qurbat/dnsblocks.in/tree/main/data#raw-dns-measurements-by-isp" class="download-card-btn" target="_blank" rel="noopener noreferrer" aria-label="View DNS measurements directory on GitHub">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="supporters" aria-labelledby="supporters-heading">
+        <div class="container">
+            <h2 id="supporters-heading">Supported by</h2>
+            <div class="logos-grid">
+                <div class="logo-card">
+                    <img src="https://www.opentech.fund/wp-content/uploads/2022/01/otf-logo.png" alt="" aria-hidden="true" role="presentation">
+                    <p>The <b>Open Technology Fund</b> supported this research through the Information Controls Research Program.</p>
+                </div>
+                <div class="logo-card">
+                    <img src="https://www.internetgovernance.org/wp-content/themes/internet-governance/ui/gt-igp-logo-alt-larger.svg" alt="" aria-hidden="true" role="presentation">
+                    <p>The <b>Internet Governance Project</b> was the host organization and provided institutional support and technical guidance through the School of Public Policy at the Georgia Institute of Technology.</p>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/cc-by-nc-sa_icon.svg.png" alt="Creative Commons BY-NC-SA 4.0 License Icon" style="height: 24px;">
+                <span>Licensed under Creative Commons BY-NC-SA 4.0</span>
+            </div>
+        </div>
+
+        <div class="footer-citation">
+            <p style="margin-bottom: 10px; font-weight: 600; color: #e8e4d8;" id="citation-heading">Citation (BibTeX):</p>
+            <pre class="bibtex-citation" role="code" aria-labelledby="citation-heading">@misc{poisonedwellsreport,
+  author = "Karan Saini",
+  title  = "Poisoned Wells: Examining the scale of DNS censorship in India",
+  year   = "2026",
+  month  = "March",
+  url    = "https://dnsblocks.in"
+}</pre>
+        </div>
+
+        <div class="footer-credits">
+            <p>Poisoned Wells  by <a href="https://karansaini.com" target="_blank" rel="noopener noreferrer">Karan Saini.</a> Accessible and Screen Reader Compatible.</p>
+            <p>Found an incorrect website categorization? <a href="https://github.com/qurbat/dnsblocks.in/edit/main/data/compiled_blocklist.csv" target="_blank" rel="noopener noreferrer">Submit a pull request on GitHub</a> to help improve the compiled blocklist.</p>
+            <p>Title font <a href="https://velvetyne.fr/fonts/terminal-grotesque/" target="_blank" rel="noopener noreferrer">Terminal Grotesque</a> by Raphaël Bastide, with the contribution of Jérémy Landes.</p>
+            <p>Subtitle font <a href="https://velvetyne.fr/fonts/steps-mono/" target="_blank" rel="noopener noreferrer">Steps Mono</a> by Jean-Baptiste Morizot, Raphaël Bastide. Distributed by <a href="https://velvetyne.fr" target="_blank" rel="noopener noreferrer">velvetyne.fr</a>.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
