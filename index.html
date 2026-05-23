@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dnsblocks.in/">
     <meta property="og:title" content="Poisoned Wells - Examining the scale of DNS censorship in India">
-    <meta property="og:description" content="A survey of the entire visible domain name space across 6 Indian ISPs, producing the largest known list of blocked domains (43,083) and revealing previously undocumented instances of overblocking.">
+    <meta property="og:description" content="A survey of the entire visible domain name space across 6 Indian ISPs, producing the largest known list of domains blocked in India (43,083), and documenting previously unreported instances of overblocking.">
     <meta property="og:image" content="https://dnsblocks.in/assets/android-chrome-512x512.png">
 
     <!-- Twitter Card -->
@@ -51,13 +51,6 @@
                 <div class="hero-meta">
                     <div class="hero-meta-item">
                         <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                        <span>Last Updated: March 2026</span>
-                    </div>
-                    <div class="hero-meta-item">
-                        <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
                             <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
                         </svg>
@@ -75,7 +68,7 @@
                         Download report
                     </a>
                     <a href="#explorer" class="btn-secondary" aria-label="View dataset explorer">
-                        Explore
+                        Dataset explorer
                     </a>
                 </div>
             </div>
@@ -147,28 +140,28 @@
                             <label class="filter-label">Filter by ISP</label>
                             <div class="checkbox-group">
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="isp-ACT" value="ACT">
-                                    <label for="isp-ACT">ACT</label>
+                                    <input type="checkbox" id="isp-AIRTEL" value="AIRTEL">
+                                    <label for="isp-AIRTEL">Bharti Airtel</label>
                                 </div>
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="isp-AIRTEL" value="AIRTEL">
-                                    <label for="isp-AIRTEL">AIRTEL</label>
+                                    <input type="checkbox" id="isp-ACT" value="ACT">
+                                    <label for="isp-ACT">Atria Convergence Technologies</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="isp-CONNECT" value="CONNECT">
-                                    <label for="isp-CONNECT">CONNECT</label>
+                                    <label for="isp-CONNECT">Connect Broadband</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="isp-JIO" value="JIO">
-                                    <label for="isp-JIO">JIO</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="isp-MTNL" value="MTNL">
-                                    <label for="isp-MTNL">MTNL</label>
+                                    <label for="isp-JIO">Reliance Jio</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="isp-YOU" value="YOU">
-                                    <label for="isp-YOU">YOU</label>
+                                    <label for="isp-YOU">You Broadband</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="isp-MTNL" value="MTNL">
+                                    <label for="isp-MTNL">Mahanagar Telephone Nigam Limited</label>
                                 </div>
                             </div>
                             <div style="margin-top: 12px;">
@@ -223,12 +216,12 @@
                                         <th scope="col">Domain</th>
                                         <th scope="col">Category</th>
                                         <th scope="col" style="text-align: right;">Tranco rank</th>
-                                        <th scope="col">ACT</th>
-                                        <th scope="col">AIRTEL</th>
-                                        <th scope="col">CONNECT</th>
-                                        <th scope="col">JIO</th>
-                                        <th scope="col">MTNL</th>
-                                        <th scope="col">YOU</th>
+                                        <th scope="col" title="Atria Convergence Technologies">ACT</th>
+                                        <th scope="col" title="Bharti Airtel">AIRTEL</th>
+                                        <th scope="col" title="Connect Broadband">CONNECT</th>
+                                        <th scope="col" title="Reliance Jio">JIO</th>
+                                        <th scope="col" title="Mahanagar Telephone Nigam Limited">MTNL</th>
+                                        <th scope="col" title="You Broadband">YOU</th>
                                     </tr>
                                 </thead>
                                 <tbody id="dataTableBody">
@@ -370,6 +363,7 @@
             <p>Found an incorrect website categorization? <a href="https://github.com/qurbat/dnsblocks.in/edit/main/data/compiled_blocklist.csv" target="_blank" rel="noopener noreferrer">Submit a pull request on GitHub</a> to help improve the compiled blocklist.</p>
             <p>Title font <a href="https://velvetyne.fr/fonts/terminal-grotesque/" target="_blank" rel="noopener noreferrer">Terminal Grotesque</a> by Raphaël Bastide, with the contribution of Jérémy Landes.</p>
             <p>Subtitle font <a href="https://velvetyne.fr/fonts/steps-mono/" target="_blank" rel="noopener noreferrer">Steps Mono</a> by Jean-Baptiste Morizot, Raphaël Bastide. Distributed by <a href="https://velvetyne.fr" target="_blank" rel="noopener noreferrer">velvetyne.fr</a>.</p>
+            <p>Last Updated: March 2026</p>
         </div>
     </footer>
 
