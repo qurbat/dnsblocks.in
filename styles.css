@@ -840,6 +840,109 @@ select.filter-input {
     color: #c9b896;
 }
 
+/* Press Coverage Section */
+.press {
+    padding: 80px 20px;
+    background: #f5f1e8;
+}
+
+.press h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.press-intro {
+    color: #4a4a4a;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.press-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.press-item {
+    border-left: 4px solid #8B7355;
+    margin-bottom: 30px;
+}
+
+.press-item:last-child {
+    margin-bottom: 0;
+}
+
+.press-link {
+    display: block;
+    padding: 4px 0 4px 25px;
+    text-decoration: none;
+    color: inherit;
+    transition: padding-left 0.3s, background 0.3s;
+}
+
+.press-link:hover,
+.press-link:focus-visible {
+    background: rgba(139, 115, 85, 0.07);
+    padding-left: 32px;
+}
+
+.press-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.press-outlet {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8B7355;
+}
+
+.press-date {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #6a6a6a;
+    white-space: nowrap;
+}
+
+.press-headline {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.press-link:hover .press-headline,
+.press-link:focus-visible .press-headline {
+    color: #8B7355;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.press-arrow {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    margin-left: 4px;
+    vertical-align: baseline;
+    color: #8B7355;
+}
+
+.press-byline {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+}
+
 /* Supporters Section */
 .supporters {
     padding: 80px 20px;
@@ -1107,6 +1210,15 @@ select.filter-input {
         padding: 25px;
         min-height: auto;
     }
+
+    .press-headline {
+        font-size: 1.1rem;
+    }
+
+    .press-meta {
+        justify-content: flex-start;
+        gap: 6px 14px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1149,5 +1261,22 @@ select.filter-input {
 
     .supporters {
         padding: 50px 16px;
+    }
+
+    .press {
+        padding: 50px 16px;
+    }
+
+    .press-link {
+        padding-left: 18px;
+    }
+
+    .press-link:hover,
+    .press-link:focus-visible {
+        padding-left: 22px;
+    }
+
+    .press-headline {
+        font-size: 1.05rem;
     }
 }
