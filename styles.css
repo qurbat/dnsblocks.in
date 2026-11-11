@@ -859,6 +859,20 @@ select.filter-input {
     font-size: 1.1rem;
 }
 
+.press-subheading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 25px;
+}
+
+.press-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
 .press-list {
     list-style: none;
     margin: 0;
@@ -1218,6 +1232,11 @@ select.filter-input {
     .press-meta {
         justify-content: flex-start;
         gap: 6px 14px;
+    }
+
+    .press-columns {
+        grid-template-columns: 1fr;
+        gap: 50px;
     }
 }
 
